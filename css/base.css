@@ -1,0 +1,53 @@
+/* base.css — 리셋 & 공통 타이포 (honam-light 톤 계승) */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  font-family: var(--font);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body { cursor: default; }
+
+img, video { display: block; max-width: 100%; }
+
+h1, h2, h3 { font-weight: var(--fw-semibold); letter-spacing: -0.02em; line-height: 1.04; }
+
+/* 흰 pill eyebrow */
+.eyebrow {
+  display: inline-block;
+  width: fit-content;
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  color: #1d1d1f;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+.headline { font-size: var(--fs-h1); }
+.headline--display { font-size: var(--fs-display); letter-spacing: -0.03em; }
+.headline--h2 { font-size: var(--fs-h2); }
+.headline--h3 { font-size: var(--fs-h3); }
+
+.subcopy {
+  font-size: var(--fs-lead);
+  line-height: 1.4;
+  color: var(--fg-dim);
+  font-weight: var(--fw-regular);
+}
+.body { font-size: var(--fs-body); line-height: 1.5; color: var(--fg-dim); }
+
+strong { color: var(--fg); font-weight: var(--fw-semibold); }
+
+/* 라이트 슬라이드 색 보정 */
+.slide--light { color: var(--fg-ink); }
+.slide--light .subcopy,
+.slide--light .body { color: var(--fg-ink-dim); }
+.slide--light strong { color: var(--fg-ink); }
+.slide--light .eyebrow { color: #1d1d1f; background: #fff; border-color: rgba(0,0,0,.14); }

@@ -1,0 +1,251 @@
+/* proposal.css — Claude Team 도입 기안 덱 전용
+   (tokens/base/slides 이후 로드 · 다크 테마 위 기안 컴포넌트 + 세로 fit 글라스 미디어) */
+
+:root {
+  --amber: #F5A623;
+  --amber-soft: rgba(245, 166, 35, 0.16);
+  --amber-line: rgba(245, 166, 35, 0.35);
+  --good: #51cf66;
+  --bad: #ff6b6b;
+  --card: rgba(255, 255, 255, 0.045);
+  --card-line: rgba(255, 255, 255, 0.10);
+  --glass: rgba(255, 255, 255, 0.06);
+}
+
+/* accent 헬퍼 */
+.accent { color: var(--amber); }
+.headline--h2 .accent, .headline--h3 .accent { color: var(--amber); }
+
+/* ===================== 전역 글라스모피즘 배경 (모든 슬라이드 공통) ===================== */
+#stage { background: radial-gradient(130% 100% at 50% 30%, #14161d 0%, #0a0b0f 58%, #000 100%); }
+.stage-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.stage-bg .orb { position: absolute; border-radius: 50%; filter: blur(120px); }
+.stage-bg .orb--1 { width: 820px; height: 820px; left: -160px; top: -200px; background: radial-gradient(circle, rgba(245,166,35,.42), transparent 68%); opacity: .5; }
+.stage-bg .orb--2 { width: 760px; height: 760px; right: -180px; bottom: -220px; background: radial-gradient(circle, rgba(214,138,28,.34), transparent 68%); opacity: .48; }
+.stage-bg .orb--3 { width: 620px; height: 620px; right: 24%; top: -160px; background: radial-gradient(circle, rgba(120,140,205,.24), transparent 70%); opacity: .42; }
+.stage-bg .orb--4 { width: 520px; height: 520px; left: 20%; bottom: -160px; background: radial-gradient(circle, rgba(255,255,255,.12), transparent 70%); opacity: .4; }
+/* 슬라이드는 투명 → 전역 배경이 비침 */
+.slide { background: transparent; }
+/* 문서 슬라이드 콘텐츠: 프로스티드 글라스 표면 위에 배치 */
+.slide--doc .slide__inner {
+  padding: 54px 64px; border-radius: 26px;
+  background: linear-gradient(160deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 36px 100px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.16);
+  backdrop-filter: blur(30px) saturate(1.25); -webkit-backdrop-filter: blur(30px) saturate(1.25);
+}
+
+/* ===================== 세로 fit 글라스 미디어 (표지) ===================== */
+.vfit {
+  position: relative; width: 100%; height: 100%;
+  overflow: hidden; border-radius: 18px;
+  display: flex; align-items: center; justify-content: center; background: #0b0e14;
+}
+.vfit .vfit__bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; transform: scale(1.06);
+  filter: blur(44px) saturate(1.15) brightness(.44); z-index: 0;
+}
+.vfit .vfit__fg {
+  position: relative; z-index: 1;
+  max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;
+}
+/* 표지: 텍스트 + 글라스모피즘 고급 배경 (영상 없음) */
+#cover {
+  justify-content: center; align-items: center; text-align: center; overflow: hidden;
+  background: radial-gradient(130% 100% at 50% 38%, #14161d 0%, #0a0b0f 55%, #000 100%);
+}
+.cover-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.cover-bg .orb { position: absolute; border-radius: 50%; filter: blur(96px); }
+.cover-bg .orb--1 { width: 760px; height: 760px; left: -140px; top: -180px; background: radial-gradient(circle, rgba(245,166,35,.55), transparent 68%); opacity: .6; }
+.cover-bg .orb--2 { width: 680px; height: 680px; right: -160px; bottom: -200px; background: radial-gradient(circle, rgba(214,138,28,.42), transparent 68%); opacity: .55; }
+.cover-bg .orb--3 { width: 560px; height: 560px; right: 22%; top: -140px; background: radial-gradient(circle, rgba(120,140,205,.30), transparent 70%); opacity: .5; }
+.cover-bg .orb--4 { width: 420px; height: 420px; left: 16%; bottom: -120px; background: radial-gradient(circle, rgba(255,255,255,.16), transparent 70%); opacity: .5; }
+/* 중앙 프로스티드 글라스 카드 (배경 오브를 블러로 비침) */
+.cover-glass {
+  position: relative; z-index: 1; padding: 86px 104px; border-radius: 30px;
+  background: linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,.028));
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 44px 130px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.24);
+  backdrop-filter: blur(32px) saturate(1.35); -webkit-backdrop-filter: blur(32px) saturate(1.35);
+}
+.cover-hero { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.cover-accent { width: 78px; height: 4px; border-radius: 999px; background: var(--amber); box-shadow: 0 0 28px rgba(245,166,35,.75); }
+.cover-hero__title {
+  font-size: 82px; font-weight: var(--fw-bold); line-height: 1.2; letter-spacing: -0.03em;
+  color: var(--fg); max-width: 20ch; text-shadow: 0 6px 44px rgba(0,0,0,.5);
+}
+.cover-hero__title .lead-line {
+  display: block; margin-bottom: 18px; font-size: 40px; font-weight: var(--fw-semibold);
+  letter-spacing: -0.02em; color: rgba(255,255,255,.72);
+}
+.cover-hero__title .hl { color: var(--amber); }
+/* 전체화면 버튼: 우하단 고정 */
+#cover .fs-btn { top: auto; left: auto; bottom: 52px; right: 52px; transform: scale(.96); }
+#cover:hover .fs-btn { opacity: 1; pointer-events: auto; transform: scale(1); }
+
+/* 09p 기대효과·승인: 좌우 박스 크기 동일 */
+#effect .decision-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+
+/* ===================== 공통: 리드 · 인용 · 노트 ===================== */
+.lead { font-size: 23px; line-height: 1.72; color: rgba(255,255,255,.86); max-width: 1200px; letter-spacing: -0.005em; }
+.lead strong { color: #fff; }
+.quote {
+  border-left: 3px solid var(--amber); padding: 8px 0 8px 24px; margin: 6px 0;
+  font-size: 24px; line-height: 1.5; color: rgba(255,255,255,.9); font-weight: var(--fw-semibold);
+}
+.quote em { color: var(--amber); font-style: normal; }
+.note { font-size: var(--fs-small); color: var(--fg-dim); line-height: 1.5; }
+
+/* ===================== 2분할 패널 + 리스트 ===================== */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.panel {
+  background: var(--card); border: 1px solid var(--card-line); border-radius: var(--radius);
+  padding: 34px 36px; display: flex; flex-direction: column; gap: 6px;
+}
+.panel h3 { font-size: 24px; font-weight: var(--fw-semibold); color: #fff; display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.panel h3 .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 10px rgba(245,166,35,.7); }
+.list { list-style: none; }
+.list li {
+  position: relative; padding: 13px 0 13px 26px; font-size: 17px; line-height: 1.5;
+  color: rgba(255,255,255,.74); border-top: 1px solid rgba(255,255,255,.07);
+}
+.list li:first-child { border-top: none; }
+.list li::before { content: "▸"; position: absolute; left: 2px; top: 12px; color: var(--amber); font-weight: 700; }
+.list li strong, .list li b { color: #fff; font-weight: var(--fw-semibold); }
+
+/* ===================== 결정/승인 박스 ===================== */
+.decision-grid { display: grid; grid-template-columns: 1.12fr 1fr; gap: 30px; align-items: start; }
+.decision-box {
+  border: 1.5px solid var(--amber-line); border-radius: var(--radius);
+  padding: 34px 36px; background: linear-gradient(180deg, rgba(245,166,35,.06), rgba(255,255,255,.02));
+}
+.decision-box .lbl { font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); }
+.decision-box .headline { font-size: 27px; font-weight: var(--fw-semibold); color: #fff; line-height: 1.35; margin: 14px 0 20px; }
+.decision-box .headline em { color: var(--amber); font-style: normal; }
+.dtable { width: 100%; border-collapse: collapse; font-size: 17px; }
+.dtable td { padding: 13px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.dtable tr:first-child td { border-top: none; }
+.dtable td:first-child { color: var(--fg-dim); }
+.dtable td:last-child { text-align: right; font-weight: var(--fw-semibold); color: #fff; font-variant-numeric: tabular-nums; }
+.dtable .big td { font-size: 19px; padding: 15px 0; }
+.dtable .big td:last-child { color: var(--amber); font-size: 24px; }
+
+/* 우측 가격 카드 스택 */
+.price-hero { display: flex; flex-direction: column; gap: 16px; }
+.ph-card {
+  position: relative; background: var(--card); border: 1px solid var(--card-line);
+  border-radius: var(--radius); padding: 24px 28px;
+}
+.ph-card.flag { border: 1.5px solid var(--amber-line); box-shadow: 0 0 26px rgba(245,166,35,.14); background: linear-gradient(180deg, rgba(245,166,35,.07), rgba(255,255,255,.02)); }
+.ph-card .tag { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-dim); }
+.ph-card.flag .tag { color: var(--amber); }
+.ph-card .row { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 8px; }
+.ph-card .amt { font-family: var(--font-num); font-size: 40px; font-weight: var(--fw-bold); color: #fff; font-variant-numeric: tabular-nums; line-height: 1; }
+.ph-card .amt small { font-size: 17px; color: var(--fg-dim); font-weight: var(--fw-regular); }
+.ph-card .won { font-size: 14px; color: var(--fg-dim); text-align: right; line-height: 1.5; font-variant-numeric: tabular-nums; }
+.ph-card .desc { font-size: 14px; color: rgba(255,255,255,.6); margin-top: 8px; }
+
+/* ===================== KPI 스트립 ===================== */
+.kpi { display: flex; gap: 22px; }
+.kpi .k {
+  flex: 1; background: var(--card); border: 1px solid var(--card-line);
+  border-radius: var(--radius); padding: 24px 26px;
+}
+.kpi .k .v { font-family: var(--font-num); font-size: 40px; font-weight: var(--fw-bold); color: var(--amber); font-variant-numeric: tabular-nums; line-height: 1; text-shadow: 0 0 22px rgba(245,166,35,.35); }
+.kpi .k .l { font-size: 15px; color: var(--fg-dim); margin-top: 12px; letter-spacing: 0.01em; }
+
+/* ===================== 05p 실증: 세로형 단일 캐러셀 + 정보 2분할 ===================== */
+#proof .proof-grid { display: grid; grid-template-columns: 262px 1fr; gap: 56px; align-items: center; width: 100%; }
+#proof .showcase-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+#proof .showcase { position: relative; width: 262px; height: 466px; aspect-ratio: auto; margin: 0; border-radius: 18px; box-shadow: 0 24px 60px rgba(0,0,0,.5); }
+#proof .sc-clip { border-radius: 18px; }
+.sc-item .vfit { height: 100%; border-radius: 18px; }
+.sc-item .sc-cap { z-index: 4; }
+/* 캐러셀 글로우(블러 배경 영상) 제거 → 라운디드 렉탱글만 보이게 */
+#proof .sc-item .vfit__bg { display: none; }
+#proof .sc-item .vfit { background: #0b0e14; }
+#proof .proof-info { display: flex; flex-direction: column; gap: 22px; }
+.kpi--2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pipeline-line { font-size: 15px; line-height: 1.65; color: var(--fg-dim); }
+.pipeline-line b { color: #fff; font-weight: var(--fw-semibold); }
+.ref-link {
+  display: flex; flex-direction: column; gap: 5px; text-decoration: none;
+  padding: 20px 24px; border-radius: 16px;
+  background: linear-gradient(160deg, rgba(245,166,35,.15), rgba(245,166,35,.05));
+  border: 1px solid var(--amber-line);
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.ref-link:hover { background: rgba(245,166,35,.22); transform: translateY(-1px); }
+.ref-link__t { font-size: 18px; font-weight: var(--fw-semibold); color: #fff; }
+.ref-link__u { font-size: 14px; color: var(--amber); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+/* ===================== 파이프라인 flow ===================== */
+.flow { display: flex; border: 1px solid var(--card-line); border-radius: var(--radius); overflow: hidden; background: var(--card); }
+.flow .step { flex: 1; padding: 26px 22px; border-right: 1px solid rgba(255,255,255,.08); }
+.flow .step:last-child { border-right: none; }
+.flow .step .n { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: var(--fg-dim); }
+.flow .step .t { font-weight: var(--fw-semibold); font-size: 19px; margin: 10px 0 7px; color: #fff; }
+.flow .step .d { font-size: 14px; color: var(--fg-dim); line-height: 1.5; }
+.flow .step.key { background: linear-gradient(180deg, rgba(245,166,35,.14), rgba(245,166,35,.04)); }
+.flow .step.key .n, .flow .step.key .t { color: var(--amber); }
+
+/* ===================== 데이터 표 (stat-table 확장) ===================== */
+.stat-table td.plan, .stat-table th.plan { text-align: left; font-weight: var(--fw-semibold); color: #fff; }
+.stat-table .hi { color: var(--amber); font-weight: var(--fw-bold); }
+.tag-rec, .tag-base {
+  display: inline-block; font-size: 11px; font-weight: 800; padding: 2px 9px; border-radius: 999px; margin-left: 8px; vertical-align: middle;
+}
+.tag-rec { background: rgba(81,207,102,.14); color: var(--good); border: 1px solid rgba(81,207,102,.4); }
+.tag-base { background: var(--amber-soft); color: var(--amber); border: 1px solid var(--amber-line); }
+.pricing-grid { display: grid; grid-template-columns: 0.82fr 1.35fr; gap: 30px; align-items: start; }
+
+/* ===================== 비교 카드(compare) ===================== */
+.compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.cc {
+  background: var(--card); border: 1px solid var(--card-line); border-radius: var(--radius);
+  padding: 30px 30px; display: flex; flex-direction: column; gap: 4px;
+}
+.cc.flag { border: 1.5px solid var(--amber-line); box-shadow: 0 0 26px rgba(245,166,35,.14); background: linear-gradient(180deg, rgba(245,166,35,.06), rgba(255,255,255,.02)); }
+.cc .tag { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-dim); }
+.cc.flag .tag { color: var(--amber); }
+.cc .amt { font-family: var(--font-num); font-size: 44px; font-weight: var(--fw-bold); color: #fff; margin: 10px 0 2px; font-variant-numeric: tabular-nums; }
+.cc .amt small { font-size: 18px; color: var(--fg-dim); font-weight: var(--fw-regular); }
+.cc .unit { font-size: 15px; color: var(--fg-dim); margin-bottom: 16px; }
+.cc ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.cc li { position: relative; padding-left: 26px; font-size: 15.5px; line-height: 1.45; color: rgba(255,255,255,.78); }
+.cc li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--good); font-weight: 800; }
+.cc li.no { color: rgba(255,255,255,.5); }
+.cc li.no::before { content: "✕"; color: var(--bad); }
+.verdict {
+  margin-top: 6px; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid var(--card-line); border-radius: var(--radius); padding: 24px 30px;
+  font-size: 18px; line-height: 1.6; color: rgba(255,255,255,.82);
+}
+.verdict b { color: var(--amber); }
+
+/* ===================== 종합 마퀴 (실증 결과 5컷) ===================== */
+.final-marquee { width: 100%; overflow: hidden; margin: 6px 0 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.final-track { display: flex; width: max-content; animation: marquee-final 40s linear infinite; }
+.final-track video { flex: 0 0 auto; height: 260px; aspect-ratio: 9 / 16; object-fit: cover; display: block; border-radius: 14px; margin-right: 16px; background: #000; box-shadow: 0 12px 34px rgba(0,0,0,.5); }
+@keyframes marquee-final { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ===================== 하단 각주 ===================== */
+.foot-note {
+  position: absolute; left: var(--pad-x); right: var(--pad-x); bottom: 40px; z-index: 3;
+  font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; max-width: 1400px;
+}
+
+/* 기안형 문서 슬라이드: 타이틀 좌측 상단 · 내용 세로 중앙 */
+.slide--doc { justify-content: flex-start; }
+.slide--doc .slide__inner { height: 100%; max-width: 1560px; gap: 0; }
+.doc-head { flex: 0 0 auto; display: flex; flex-direction: column; gap: 12px; padding-top: 2px; }
+/* 섹션 라벨: 타이틀의 절반 크기(가독성) */
+.doc-head .secnum { font-size: 22px; font-weight: var(--fw-bold); letter-spacing: 0.01em; text-transform: none; color: var(--amber); line-height: 1.2; }
+.doc-head .headline--h2 { font-size: 44px; line-height: 1.14; }
+.doc-head .headline--h2 .accent { color: var(--amber); }
+/* 내용은 남은 공간 세로 중앙 정렬 + 넉넉한 간격 */
+.doc-body { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: 34px; }
+.secnum { font-size: 22px; font-weight: var(--fw-bold); color: var(--amber); }

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Team 플랜 도입 기안 · AI 광고영상 워크플로우</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/slides.css" />
+  <link rel="stylesheet" href="css/proposal.css" />
+</head>
+<body>
+  <div id="boot"></div>
+  <div id="stage">
+
+    <!-- 전역 글라스모피즘 배경 (모든 슬라이드 공통) -->
+    <div class="stage-bg" aria-hidden="true">
+      <span class="orb orb--1"></span>
+      <span class="orb orb--2"></span>
+      <span class="orb orb--3"></span>
+      <span class="orb orb--4"></span>
+    </div>
+
+    <!-- 01 · 표지 (텍스트 + 글라스모피즘 고급 배경) -->
+    <section class="slide slide--center" id="cover">
+      <div class="cover-bg" aria-hidden="true">
+        <span class="orb orb--1"></span>
+        <span class="orb orb--2"></span>
+        <span class="orb orb--3"></span>
+        <span class="orb orb--4"></span>
+      </div>
+      <div class="cover-glass" data-rise>
+        <div class="cover-hero">
+          <h1 class="cover-hero__title" data-rise="2">
+            <span class="lead-line">AI 광고영상 워크플로우 정착을 위한</span>
+            <span class="hl">Claude Team 플랜</span> 도입 기안
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · 결정 요청 & 실 비용 (Standard 단일안 + 하루 요청 커버리지) -->
+    <section class="slide slide--doc" id="decision">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <span class="secnum">결정 요청 &amp; 실 비용</span>
+          <h2 class="headline--h2">6인 전원 <span class="accent">Standard</span> · 월 <span class="accent">$120</span> 도입 승인</h2>
+        </header>
+        <div class="doc-body">
+          <div class="decision-grid" data-rise="2">
+            <div class="decision-box">
+              <div class="lbl">결정 요청 사항</div>
+              <div class="headline">Claude Team 플랜,<br>6인 전원 <em>Standard(연간)</em>로 도입 승인 요청</div>
+              <table class="dtable">
+                <tr><td>도입 대상</td><td>airpass_mediateam 6인</td></tr>
+                <tr><td>플랜 구성</td><td>Team · Standard 6석</td></tr>
+                <tr><td>결제 방식</td><td>연간 ($20 / seat·월)</td></tr>
+                <tr class="big"><td>월 예상 비용</td><td>USD $120</td></tr>
+                <tr class="big"><td>연 예상 비용</td><td>USD $1,440</td></tr>
+                <tr><td>원화 참고</td><td>월 약 16.6만원 · 연 약 199만원</td></tr>
+              </table>
+            </div>
+            <div class="price-hero">
+              <div class="ph-card flag">
+                <div class="tag">승인 요청안 · Standard 6석 (연간)</div>
+                <div class="row"><div class="amt">$120<small> /월</small></div><div class="won">연 $1,440<br>월 약 165,600원</div></div>
+                <div class="desc">대부분의 기획·프롬프트 용도엔 <b style="color:#fff">Standard로 충분</b> · 헤비 Opus 좌석만 Premium 상향.</div>
+              </div>
+              <div class="panel" style="padding:22px 28px">
+                <h3><span class="dot"></span>사용 한도 구조 <span style="font-size:14px;color:var(--fg-dim);font-weight:400">· Standard 1인 기준</span></h3>
+                <table class="dtable">
+                  <tr><td>세션(5시간) 한도</td><td>Pro의 약 1.25배</td></tr>
+                  <tr><td>일반 대화 기준</td><td>약 55 메시지 / 5시간</td></tr>
+                  <tr><td>주간 한도</td><td>전 모델 공통 + Opus 별도</td></tr>
+                  <tr><td>Opus 4.8 (High)</td><td>소비 빨라 실제 횟수 ↓</td></tr>
+                  <tr class="big"><td>정확 수치</td><td>미공개 · 앱 내 실확인</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · 요약 · 배경 -->
+    <section class="slide slide--doc" id="summary">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <span class="secnum">01 — 요약</span>
+          <h2 class="headline--h2">검증된 워크플로우를 <span class="accent">팀 전체로 확장</span></h2>
+        </header>
+        <div class="doc-body">
+          <p class="lead" data-rise="2">사내 미디어팀은 <strong>Higgsfield</strong>에서 <strong>Gemini Omni</strong>로 AI 광고영상을 생성하는 실험을 완료했습니다. 이 실험의 기획·프롬프트 전 과정을 <strong>Claude 4.8 Opus (High)</strong>로 수행했고, 5개 입력 조건 테스트에서 상업광고 수준의 결과물 5컷을 얻었습니다. 이 방식을 팀원 전체가 동일하게 재현하려면, 결과 품질을 좌우하는 <strong>양질의 프롬프트 생성 능력</strong>을 팀 공용으로 확보해야 합니다.</p>
+          <div class="two" data-rise="3">
+            <div class="panel">
+              <h3><span class="dot"></span>기안 핵심 논거</h3>
+              <ul class="list">
+                <li>영상 결과 품질은 <b>입력 프롬프트의 정합성</b>에서 갈린다 — 조명·카메라 구체화만으로 성공률 60%→95%.</li>
+                <li>Higgsfield의 여러 모델(GPT Image 2·Nano Banana Pro·Gemini Omni·Kling·Grok·Seedance)에 <b>공통 투입될 프롬프트</b>를 한 곳에서 일관 생성.</li>
+                <li>효율·결과물 종합 시 <b>Claude 4.8 Opus High</b>가 이 워크플로우의 프롬프트 엔진으로 최적.</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h3><span class="dot"></span>왜 Team 플랜인가</h3>
+              <ul class="list">
+                <li>개인별 각자 구독·정산 대신 <b>중앙 결제 1건</b>으로 통합.</li>
+                <li><b>관리자 제어·SSO·도메인 캡처</b> 확보.</li>
+                <li>브랜드 바이블·프롬프트를 <b>팀 공유 프로젝트</b>에 자산화.</li>
+                <li>대화 내용 <b>모델 학습 미사용</b>이 기본값.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · 도구 선택 근거 -->
+    <section class="slide slide--doc" id="why">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <span class="secnum">02 — 도구 선택 근거</span>
+          <h2 class="headline--h2">왜 이 워크플로우에 <span class="accent">Claude</span>인가</h2>
+        </header>
+        <div class="doc-body">
+          <p class="lead" data-rise="2">우리 파이프라인은 하나의 최종 모델에 종속되지 않습니다. Higgsfield 안에서 쓰는 이미지·영상 모델이 <strong>GPT Image 2, Nano Banana Pro, Gemini Omni, Kling, Grok, Seedance</strong> 등으로 다양합니다. 실제로 필요한 것은 "어떤 생성 모델이냐"가 아니라, <strong>그 모델들 각각에 정확히 먹히는 프롬프트를 안정적으로 뽑는 상위 레이어</strong>입니다.</p>
+          <p class="quote" data-rise="3">기획·프롬프팅은 <em>Claude 4.8 Opus High</em>, 영상화는 <em>Gemini Omni</em> — 실험에서 검증된 역할 분담.</p>
+          <table class="stat-table" data-rise="4">
+            <thead><tr><th class="plan">실험에서 확인된 강점</th><th>워크플로우 상 의미</th></tr></thead>
+            <tbody>
+              <tr><td class="plan">서술형 프롬프트 설계</td><td>키워드 나열이 아닌 장면 서술 → 여러 생성 모델이 동일하게 해석 가능한 지시문</td></tr>
+              <tr><td class="plan">한글 타이포 정확 렌더 유도</td><td>따옴표로 화면 문구 고정 → T1·T3·T4·T5 전 컷 한글 타이포 정확도 ◎</td></tr>
+              <tr><td class="plan">조명·카메라 구체화 / NSFW 오탐 회피</td><td>골든아워·85mm·f/1.8 구체화로 성공률 95%, burst→open 어휘 순화로 재생성 낭비 방지</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · 실증 근거 -->
+    <section class="slide slide--doc" id="proof">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <span class="secnum">03 — 실증 근거</span>
+          <h2 class="headline--h2">실험이 증명한 결과 <span class="accent">· GOLDEN HOUR CHICKEN</span></h2>
+        </header>
+        <div class="doc-body">
+          <div class="proof-grid" data-rise="2">
+            <div class="showcase-wrap">
+              <div class="mini showcase" data-carousel>
+                <div class="sc-clip">
+                  <div class="mini__track sc-track-main">
+                    <figure class="sc-item"><div class="vfit"><video class="vfit__bg" data-src="source/videos/T1_single-source_RESULT.mp4" data-autoplay muted loop playsinline preload="none" aria-hidden="true"></video><video class="vfit__fg" data-src="source/videos/T1_single-source_RESULT.mp4" data-autoplay muted loop playsinline preload="none"></video></div><div class="sc-cap"><span class="sc-cap__no">#1</span><h4>T1 · 단일 소스</h4></div></figure>
+                    <figure class="sc-item"><div class="vfit"><video class="vfit__bg" data-src="source/videos/T3_sound-only_RESULT_2.mp4" data-autoplay muted loop playsinline preload="none" aria-hidden="true"></video><video class="vfit__fg" data-src="source/videos/T3_sound-only_RESULT_2.mp4" data-autoplay muted loop playsinline preload="none"></video></div><div class="sc-cap"><span class="sc-cap__no">#2</span><h4>T3 · 사운드-온리</h4></div></figure>
+                    <figure class="sc-item"><div class="vfit"><video class="vfit__bg" data-src="source/videos/T4_text-to-video_RESULT.mp4" data-autoplay muted loop playsinline preload="none" aria-hidden="true"></video><video class="vfit__fg" data-src="source/videos/T4_text-to-video_RESULT.mp4" data-autoplay muted loop playsinline preload="none"></video></div><div class="sc-cap"><span class="sc-cap__no">#3</span><h4>T4 · 완전 무입력</h4></div></figure>
+                    <figure class="sc-item"><div class="vfit"><video class="vfit__bg" data-src="source/videos/T4-2_typo-fixed_RESULT.mp4" data-autoplay muted loop playsinline preload="none" aria-hidden="true"></video><video class="vfit__fg" data-src="source/videos/T4-2_typo-fixed_RESULT.mp4" data-autoplay muted loop playsinline preload="none"></video></div><div class="sc-cap"><span class="sc-cap__no">#4</span><h4>T4-2 · 텍스트 수정본</h4></div></figure>
+                    <figure class="sc-item"><div class="vfit"><video class="vfit__bg" data-src="source/videos/T5_new-concept_RESULT.mp4" data-autoplay muted loop playsinline preload="none" aria-hidden="true"></video><video class="vfit__fg" data-src="source/videos/T5_new-concept_RESULT.mp4" data-autoplay muted loop playsinline preload="none"></video></div><div class="sc-cap"><span class="sc-cap__no">#5</span><h4>T5 · 독립 새 컨셉</h4></div></figure>
+                  </div>
+                </div>
+              </div>
+              <div class="film-ctrl" data-no-advance>
+                <div class="film-row">
+                  <button class="film-btn" data-film-prev aria-label="이전">‹</button>
+                  <span class="film-count"><b class="film-count__cur" data-mini-count>1</b> / 5</span>
+                  <button class="film-btn" data-film-next aria-label="다음">›</button>
+                </div>
+              </div>
+            </div>
+            <div class="proof-info">
+              <div class="kpi kpi--2x2">
+                <div class="k"><div class="v">5</div><div class="l">최종 결과 컷</div></div>
+                <div class="k"><div class="v">150</div><div class="l">총 크레딧</div></div>
+                <div class="k"><div class="v">₩12,585</div><div class="l">영상 생성 비용</div></div>
+                <div class="k"><div class="v">95%</div><div class="l">프롬프트 구체화 시 성공률</div></div>
+              </div>
+              <p class="pipeline-line">소스 → ffmpeg 분석 → 기획·프롬프트 <b>Claude 4.8 Opus High</b> → 생성 <b>Gemini Omni</b> → 검수 (총 6단계)</p>
+              <a class="ref-link" href="https://gemini-omni-test.netlify.app" target="_blank" rel="noopener">
+                <span class="ref-link__t">전체 자료 · 결과 리포트 보기</span>
+                <span class="ref-link__u">gemini-omni-test.netlify.app ↗</span>
+              </a>
+              <p class="note">무입력에서도 상업광고급 결과 · 전 컷 한글 타이포 정확 렌더.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · 요금 구조 -->
+    <section class="slide slide--doc" id="pricing">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <span class="secnum">04 — 요금 구조</span>
+          <h2 class="headline--h2">Standard <span class="accent">시트당 요금 &amp; 6인 시나리오</span></h2>
+        </header>
+        <div class="doc-body">
+          <p class="subcopy" data-rise="2">최소 5석 · 좌석당 과금. 기획·프롬프트 용도에는 Standard로 충분해 <strong>전원 Standard(연간)</strong>를 기본안으로 제시합니다.</p>
+          <div class="pricing-grid" data-rise="3">
+            <table class="stat-table stat-table--sm">
+              <thead><tr><th class="plan">좌석</th><th class="num">월간</th><th class="num">연간(월환산)</th></tr></thead>
+              <tbody>
+                <tr><td class="plan">Standard<span class="tag-base">채택</span></td><td class="num">$25</td><td class="num hi">$20</td></tr>
+                <tr><td class="plan">Premium <span style="color:var(--fg-dim);font-weight:400">(참고)</span></td><td class="num">$125</td><td class="num">$100</td></tr>
+              </tbody>
+            </table>
+            <table class="stat-table stat-table--sm">
+              <thead><tr><th class="plan">6인 구성 (Standard)</th><th>결제</th><th class="num">월(USD)</th><th class="num">연(USD)</th><th class="num">원화 참고</th></tr></thead>
+              <tbody>
+                <tr><td class="plan">전원 Standard<span class="tag-base">기본안</span></td><td>연간</td><td class="num hi">$120</td><td class="num">$1,440</td><td class="num">약 199만원/년</td></tr>
+                <tr><td class="plan">전원 Standard</td><td>월간</td><td class="num">$150</td><td class="num">$1,800</td><td class="num">약 248만원/년</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="two" data-rise="4">
+            <div class="panel" style="padding:24px 30px">
+              <h3><span class="dot"></span>왜 Standard로 충분한가</h3>
+              <ul class="list">
+                <li>Pro 대비 세션당 약 <b>1.25배</b> 사용량 — 기획·프롬프트 작성에는 여유.</li>
+                <li>관리자 제어·SSO·팀 공유 프로젝트 등 <b>Team 핵심 기능 전부 포함</b>.</li>
+              </ul>
+            </div>
+            <div class="panel" style="padding:24px 30px">
+              <h3><span class="dot"></span>확장 여지 (필요 시)</h3>
+              <ul class="list">
+                <li>특정 헤비 좌석만 <b>Premium(연 $100)</b>으로 상향 — 좌석 혼합·재배정 자유.</li>
+                <li>지금은 전원 Standard로 시작, 사용량 확인 후 단계적 조정.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-note">US 기준·세금 별도. 지역·통화·세금 상이. 요금은 Anthropic 재량 변경 가능(2026-07-16). 실 결제액은 claude.ai/upgrade에서 확인.</div>
+    </section>
+
+    <!-- 08 · 개별 구독 대비 -->
+    <section class="slide slide--doc" id="compare">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <span class="secnum">05 — 대안 비교</span>
+          <h2 class="headline--h2">기본 구성(6인) <span class="accent">vs 개별 구독</span></h2>
+        </header>
+        <div class="doc-body">
+          <p class="subcopy" data-rise="2">비용이 동일하면서, 팀 운영에 필요한 통제·보안 기능은 Team 플랜에만 있습니다.</p>
+          <div class="compare" style="grid-template-columns:repeat(2,1fr)" data-rise="3">
+            <div class="cc">
+              <div class="tag">대안 A · 개별 구독</div>
+              <div class="amt">$120<small> /월</small></div>
+              <div class="unit">개별 Pro 6개 ($20 × 6, 월간)</div>
+              <ul>
+                <li>개인별 사용 가능</li>
+                <li class="no">중앙 결제 불가 (6건 개별 정산)</li>
+                <li class="no">관리자 제어·SSO 없음</li>
+                <li class="no">팀 공유 프로젝트 없음</li>
+                <li class="no">학습 미사용 계약 기본값 아님</li>
+              </ul>
+            </div>
+            <div class="cc flag">
+              <div class="tag">기본 구성 · 권장</div>
+              <div class="amt">$120<small> /월</small></div>
+              <div class="unit">Team 전원 Standard (연간, 6석)</div>
+              <ul>
+                <li>Pro 대비 세션당 1.25배</li>
+                <li>중앙 결제 — 정산 1건 통합</li>
+                <li>관리자 제어·SSO·도메인 캡처</li>
+                <li>팀 공유 프로젝트(프롬프트 자산화)</li>
+                <li>학습 미사용 기본값</li>
+              </ul>
+            </div>
+          </div>
+          <div class="verdict" data-rise="4"><b>핵심 —</b> 개별 Pro 6개와 Team 전원 Standard(연간)는 월 <b>$120로 동일 비용</b>. 같은 값이면 중앙 결제·관리자 제어·팀 공유 프로젝트·학습 미사용 기본값을 갖춘 <b>Team 플랜이 우월</b>합니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 · 기대효과 & 승인 -->
+    <section class="slide slide--doc" id="effect">
+      <div class="slide__inner">
+        <header class="doc-head" data-rise>
+          <span class="secnum">06 — 기대효과 &amp; 승인</span>
+          <h2 class="headline--h2">도입 시 <span class="accent">기대효과</span>와 최종 승인 요청</h2>
+        </header>
+        <div class="doc-body">
+          <div class="decision-grid" data-rise="2">
+            <div class="panel">
+              <h3><span class="dot"></span>기대효과</h3>
+              <ul class="list">
+                <li><b>품질 표준화</b> — 검증된 프롬프트 방식을 팀 전원이 재현, 결과 편차 축소.</li>
+                <li><b>재작업 비용 절감</b> — 제약 사전 반영·어휘 순화로 재생성 크레딧 낭비 최소화.</li>
+                <li><b>자산화</b> — 브랜드 바이블·모델별 프롬프트를 공유 프로젝트에 축적·재사용.</li>
+                <li><b>정산 간소화</b> — 개별 6건 → 중앙 결제 1건.</li>
+                <li><b>보안</b> — 학습 미사용 기본값·SSO·관리자 제어 확보.</li>
+              </ul>
+            </div>
+            <div class="decision-box">
+              <div class="lbl">최종 승인 요청</div>
+              <div class="headline">6인 전원 <em>Standard(연간)</em> 도입 승인</div>
+              <table class="dtable">
+                <tr><td>플랜</td><td>Claude Team · Standard 6석</td></tr>
+                <tr><td>결제 방식</td><td>연간 ($20 / seat·월)</td></tr>
+                <tr class="big"><td>월 비용</td><td>USD $120</td></tr>
+                <tr class="big"><td>연 비용</td><td>USD $1,440</td></tr>
+                <tr><td>원화 참고</td><td>연 약 199만원 (세금 별도)</td></tr>
+                <tr><td>확장 여지</td><td>특정 좌석 Premium 상향 가능</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-note">※ 요금은 2026-07-16 기준 공개 요금이며 Anthropic 재량으로 변경될 수 있음. 최종 결제 전 지역별 요금·세금을 claude.ai/upgrade에서 재확인. 원화 환산액(환율 1,380원 가정)은 참고용 대략치. · 근거 자료: Gemini Omni Flash 광고 제작 실험(airpass_mediateam).</div>
+    </section>
+
+    <!-- 내비 화살표 -->
+    <button class="nav-arrow nav-arrow--prev" id="navPrev" type="button" aria-label="이전 슬라이드" data-no-advance>
+      <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 5 8 12 15 19"></polyline></svg>
+    </button>
+    <button class="nav-arrow nav-arrow--next" id="navNext" type="button" aria-label="다음 슬라이드" data-no-advance>
+      <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 5 16 12 9 19"></polyline></svg>
+    </button>
+
+    <!-- HUD -->
+    <div id="hud">
+      <button id="hud-home" type="button" aria-label="목차로 이동" data-no-advance><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg></button>
+      <span id="hud-section">표지</span>
+      <span id="hud-index"><input id="hud-input" type="text" inputmode="numeric" maxlength="2" value="01" aria-label="슬라이드 번호 입력" data-no-advance /> / <span id="hud-total">08</span></span>
+      <span class="bar"><i></i></span>
+    </div>
+
+  </div>
+
+  <script src="js/deck.js"></script>
+</body>
+</html>

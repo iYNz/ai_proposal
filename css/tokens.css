@@ -1,0 +1,54 @@
+/* tokens.css — 디자인 토큰 (애플 맥북 프로 톤, honam-light 참고) */
+:root {
+  /* 색 */
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --surface-2: #121214;
+  --surface-light: #fafafa;
+  --fg: #f5f5f7;          /* 애플 화이트 */
+  --fg-dim: #86868b;      /* 보조 텍스트 */
+  --fg-ink: #1d1d1f;      /* 라이트 배경 위 본문 */
+  --fg-ink-dim: #6e6e73;
+  --accent: #d0d0d6;      /* 회색 글로우 포인트 (블루 아님) */
+  --accent-ink: #6e6e73;
+  --glow: 0 0 16px rgba(255, 255, 255, 0.22);
+  --glow-strong: 0 0 28px rgba(255, 255, 255, 0.30);
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.28);
+  --line-ink: rgba(0, 0, 0, 0.12);
+
+  /* 타이포 */
+  --font: "Pretendard", -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          "SF Pro Text", "Apple SD Gothic Neo", system-ui, sans-serif;
+  --font-num: "SF Pro Display", "Pretendard", -apple-system, sans-serif;
+  --fs-display: 112px;
+  --fs-h1: 88px;
+  --fs-h2: 60px;
+  --fs-h3: 38px;
+  --fs-lead: 30px;
+  --fs-body: 22px;
+  --fs-small: 17px;
+  --fs-eyebrow: 18px;
+  --fs-mega: 168px;       /* 반전 숫자·종합 대형 수치 */
+
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-regular: 400;
+
+  /* 간격 */
+  --pad-x: 120px;
+  --pad-y: 96px;
+  --gap: 32px;
+  --radius: 18px;
+  --radius-sm: 12px;
+
+  /* 모션 */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur: 700ms;
+  --dur-fast: 420ms;
+
+  /* 무대 크기 (고정 캔버스) */
+  --stage-w: 1920px;
+  --stage-h: 1080px;
+}
